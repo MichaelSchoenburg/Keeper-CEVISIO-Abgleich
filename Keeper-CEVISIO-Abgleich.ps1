@@ -170,9 +170,7 @@ $MatchCount = 0
 
 foreach ($DatensatzMitUngültigerId in $AlleDatensätzeMitUngültigerId.Where({$null -ne $_.Benutzername})) {
     $Matches = $CsvCevisio.Where({
-        ($_.Kundennummer -eq $DatensatzMitUngültigerId.Kundennummer)
-        -and
-        ($_.Benutzername -eq $DatensatzMitUngültigerId.Benutzername)
+        ($_.Kundennummer -eq $DatensatzMitUngültigerId.Kundennummer) -and ($_.Benutzername -eq $DatensatzMitUngültigerId.Benutzername)
     })
 
     if ($DatensatzMitUngültigerId.URL -ne "") {
